@@ -1,0 +1,2668 @@
+{
+    "name": "clinical_visit_note_summarization_corpus",
+    "title": "",
+    "description": "This corpus includes textual data corresponding to synthetic clinical encounters, including each encounters’ dialogue transcript, clinical note, and metadata such as doctor patient name, age, and chief and secondary complaints. The purpose of this dataset is to be used for testing natural language generation and language generation evaluation methods for the task of clinical note generation from doctor-patient dialogue. This data, while the largest open data of it’s kind and constructed from multiple specialties, is not representative of all possible real encounter dialogue and clinical note data. We hope this dataset can be used to promote state-of-the-art research by providing a common share-able dataset to benchmark progress. The dataset here can be used to test technology for supporting front-line health care workers by alleviating their documentation burden. ",
+    "doi": "",
+    "version": "1",
+    "created": "2023",
+    "licenses": [
+        {
+            "title": "Creative Commons Attribution 4.0",
+            "name": "CC-BY-4.0",
+            "path": "https://creativecommons.org/licenses/by/4.0/"
+        }
+    ],
+    "sources": [
+        {
+            "title": "mtsamples.com",
+            "path": "mtsamples.com",
+            "contributors": []
+        }
+    ],
+    "resources": [
+        {
+            "name": "MTS_Dataset_TrainingSet.csv",
+            "description": "Training data used for baselines produced here (https://aclanthology.org/2023.eacl-main.168/ ), Task A for MEDIQA-CHAT2023, and Task A and B for MEDIQA-SUM2023.",
+            "path": "data/mts-dialog/",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "ID",
+                    "type": "numeric",
+                    "description": "record identification"
+                },
+                {
+                    "name": "section_header",
+                    "type": "string",
+                    "description": "note text section header"
+                },
+                {
+                    "name": "section_text",
+                    "type": "string",
+                    "description": "note text section text"
+                },
+                {
+                    "name": "dialogue",
+                    "type": "string",
+                    "description": "encounter dialogue"
+                }
+            ],
+            "dialect": {}
+        },{
+            "name": "MTS_Dataset_ValidationSet.csv",
+            "description": "Validation data used for baselines produced here (https://aclanthology.org/2023.eacl-main.168/ ), Task A for MEDIQA-CHAT2023, and Task A and B for MEDIQA-SUM2023.",
+            "path": "data/mts-dialog/",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "ID",
+                    "type": "numeric",
+                    "description": "record identification"
+                },
+                {
+                    "name": "section_header",
+                    "type": "string",
+                    "description": "note text section header"
+                },
+                {
+                    "name": "section_text",
+                    "type": "string",
+                    "description": "note text section text"
+                },
+                {
+                    "name": "dialogue",
+                    "type": "string",
+                    "description": "encounter dialogue"
+                }
+            ],
+            "dialect": {}
+        },{
+            "name": "MTS_Dataset_Final_200_Test1.csv",
+            "description": "Test data used Task A for MEDIQA-CHAT2023.",
+            "path": "data/mts-dialog/",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "ID",
+                    "type": "numeric",
+                    "description": "record identification"
+                },
+                {
+                    "name": "section_header",
+                    "type": "string",
+                    "description": "note text section header"
+                },
+                {
+                    "name": "section_text",
+                    "type": "string",
+                    "description": "note text section text"
+                },
+                {
+                    "name": "dialogue",
+                    "type": "string",
+                    "description": "encounter dialogue"
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "MTS_Dataset_Final_200_Test2.csv",
+            "description": "Test data used Task A and B for MEDIQA-SUM2023.",
+            "path": "data/mts-dialog/",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "ID",
+                    "type": "numeric",
+                    "description": "record identification"
+                },
+                {
+                    "name": "section_header",
+                    "type": "string",
+                    "description": "note text section header"
+                },
+                {
+                    "name": "section_text",
+                    "type": "string",
+                    "description": "note text section text"
+                },
+                {
+                    "name": "dialogue",
+                    "type": "string",
+                    "description": "encounter dialogue"
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_metadata.csv",
+            "description": "Metadata for training data used for the Task B and C of the MEDIQA-CHAT 2023 challenge, and Task C for the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train.csv",
+            "description": "Training data used for the Task B and C of the MEDIQA-CHAT 2023 challenge, and Task C for the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_metadata.csv",
+            "description": "Metadata for validation data used for the Task B and C of the MEDIQA-CHAT 2023 challenge, and Task C for the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid.csv",
+            "description": "Validation data used for the Task B and C of the MEDIQA-CHAT 2023 challenge, and Task C for the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clinicalnlp_taskB_test1_metadata.csv",
+            "description": "Metadata for test data used for the Task B of the MEDIQA-CHAT 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clinicalnlp_taskB_test1.csv",
+            "description": "Test data used for the Task B of the MEDIQA-CHAT 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clinicalnlp_taskC_test2_metadata.csv",
+            "description": "Metadata for test data used for Task C of the MEDIQA-CHAT 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clinicalnlp_taskC_test2.csv",
+            "description": "Test data used for the Task C of the MEDIQA-CHAT 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clef_taskC_test3_metadata.csv",
+            "description": "Metadata for test data used for Task C of the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "clef_taskC_test3.csv",
+            "description": "Test data used for Task C of the MEDIQA-SUM 2023 challenge.",
+            "path": "data/aci-bench/challenge_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "encounter_id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_aci_asr_metadata.csv",
+            "description": "Metadata for Test1 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_aci_asr.csv",
+            "description": "Test data for Test1 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_aci_asr_metadata.csv",
+            "description": "Metadata for Test2 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_aci_asr.csv",
+            "description": "Test data for Test2 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_aci_asr_metadata.csv",
+            "description": "Metadata for Test3 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_aci_asr.csv",
+            "description": "Test data for Test3 aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_aci_asr_metadata.csv",
+            "description": "Metadata for validation aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_aci_asr.csv",
+            "description": "Valdiation data for aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_aci_asr_metadata.csv",
+            "description": "Metadata for training aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_aci_asr.csv",
+            "description": "Training data for aci subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_aci_asrcorr_metadata.csv",
+            "description": "Metadata for Test1 aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_acicorr_asr.csv",
+            "description": "Test data for Test1 aci subset asrcorrect only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_aci_asrcorr_metadata.csv",
+            "description": "Metadata for Test2 aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_aci_asrcorr.csv",
+            "description": "Test data for Test2 aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_aci_asrcorr_metadata.csv",
+            "description": "Metadata for Test3 aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_aci_asrcorr.csv",
+            "description": "Test data for Test3 aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_aci_asrcorr_metadata.csv",
+            "description": "Metadata for validation aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_aci_asrcorr.csv",
+            "description": "Valdiation data for aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_aci_asrcorr_metadata.csv",
+            "description": "Metadata for training aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_aci_asrcorr.csv",
+            "description": "Training data for aci subset asrcorrected only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_virtscribe_asr_metadata.csv",
+            "description": "Metadata for Test1 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_virtscribe_asr.csv",
+            "description": "Test data for Test1 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_virtscribe_asr_metadata.csv",
+            "description": "Metadata for Test2 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_virtscribe_asr.csv",
+            "description": "Test data for Test2 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_virtscribe_asr_metadata.csv",
+            "description": "Metadata for Test3 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_virtscribe_asr.csv",
+            "description": "Test data for Test3 virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_virtscribe_asr_metadata.csv",
+            "description": "Metadata for validation virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_virtscribe_asr.csv",
+            "description": "Valdiation data for virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_virtscribe_asr_metadata.csv",
+            "description": "Metadata for training virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_virtscribe_asr.csv",
+            "description": "Training data for virtscribe subset ASR only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_virtscribe_humantrans_metadata.csv",
+            "description": "Metadata for Test1 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test1_virtscribe_humantrans.csv",
+            "description": "Test data for Test1 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_virtscribe_humantrans_metadata.csv",
+            "description": "Metadata for Test2 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test2_virtscribe_humantrans.csv",
+            "description": "Test data for Test2 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_virtscribe_humantrans_metadata.csv",
+            "description": "Metadata for Test3 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "test3_virtscribe_humantrans.csv",
+            "description": "Test data for Test3 virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_virtscribe_humantrans_metadata.csv",
+            "description": "Metadata for validation virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "valid_virtscribe_humantrans.csv",
+            "description": "Valdiation data for virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_virtscribe_humantrans_metadata.csv",
+            "description": "Metadata for training virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "doctor_name",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_gender",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_age",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_firstname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "patient_familyname",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "cc",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "2nd_complaints",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        },
+        {
+            "name": "train_virtscribe_humantrans.csv",
+            "description": "Training data for virtscribe subset human transcribed only.",
+            "path": "data/aci-bench/src_experiment_data",
+            "doi": "",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "bytes": "",
+            "date": "2023",
+            "encoding": "",
+            "version": "1",
+            "language": "",
+            "schema": [
+                {
+                    "name": "dataset",
+                    "type": "string",
+                    "description": "subset of data ('aci', 'virtassist', 'virtscribe')."
+                },
+                {
+                    "name": "id",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "dialogue",
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "name": "note",
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "dialect": {}
+        }
+    ],
+    "contributors": [
+        {
+            "title": "Wen-wai Yim",
+            "path": "",
+            "email": "yimwenwai@microsoft.com",
+            "role": "author"
+        },
+        {
+            "title": "Asma Ben Abacha",
+            "path": "",
+            "email": "abenabacha@microsoft.com",
+            "role": "author"
+        }
+    ],
+    "privacy": [
+        {
+            "notice": {
+                "path": "",
+                "description": ""
+            },
+            "useTerms": {
+                "path": "",
+                "description": ""
+            },
+            "sensitivity": {
+                "description": "",
+                "types": []
+            },
+            "confidentiality": {
+                "path": "",
+                "description": ""
+            },
+            "assessments": []
+        }
+    ],
+    "security": [],
+    "procedures": {
+        "collection": [],
+        "processing": [],
+        "update": [
+            {
+                "isUpdated": "false",
+                "description": "This is a one-time release.",
+                "path": "",
+                "contributors": [],
+                "periodicity": {},
+                "method": {},
+                "versioning": {}
+            }
+        ]
+    },
+    "use": []
+}
