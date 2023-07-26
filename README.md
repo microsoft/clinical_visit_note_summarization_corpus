@@ -24,6 +24,7 @@ The data here was the subject of two international research challenges: (1) the 
 
 
 This repositiory contains static data. There will be no updates to the existing data mentioned here.
+A part of this dataset (the MTS-Dialog collection) is constructed based on a dataset obtained from https://mtsamples.com/.
 
 
 ##  Papers 
