@@ -57,8 +57,8 @@ https://aclanthology.org/2023.eacl-main.168/
 
 **ACI-BENCH**
 
-*ACI-BENCH: a Novel Ambient Clinical Intelligence Dataset for Benchmarking Automatic Visit Note Generation". Wen-wai Yim, Yujuan Fu, Asma Ben Abacha, Neal Snider, Thomas Lin, Meliha Yetisgen. Submitted to Nature Scientific Data, 2023.*
-https://arxiv.org/abs/2306.02022
+*ACI-BENCH: a Novel Ambient Clinical Intelligence Dataset for Benchmarking Automatic Visit Note Generation". Wen-wai Yim, Yujuan Fu, Asma Ben Abacha, Neal Snider, Thomas Lin, Meliha Yetisgen. Nature Scientific Data 10, 586 (2023).*
+https://www.nature.com/articles/s41597-023-02487-3 
 
 <img src="ACI-Bench-Exp.png"  width="600">
 
