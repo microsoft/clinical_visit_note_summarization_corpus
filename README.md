@@ -7,7 +7,7 @@ Medical doctors spend on average 52 to 102 minutes per day writing clinical note
 
 Medical scribes which may cost up to $112k annually depending on specialty and institution, are one solution to the problem, however the high degree of required specialized training and attrition rates in the field make this solution challenging to maintain. With the advent of advanced speech-to-text and large language model language generation, automatic note generation may be one possible solution to alleviate the note creation burden. 
 
-However, datasets in this area is scarce and highly protected as there are critical legal and ethical challenges related to recording, saving, and releasing patient-clinician conversations as well as their corresponding clinical note and health data. The purpose of this corpus is to provide a common dataset for the task of automatic clinical note creation from clinician-patient visit dialogue.  The technology developed from this work can be used to de-burden physicians from documentation burden, allowing them to devote more time and attention to patient care. 
+However, datasets in this area are scarce and highly protected as there are critical legal and ethical challenges related to recording, saving, and releasing patient-clinician conversations as well as their corresponding clinical note and health data. The purpose of this corpus is to provide a common dataset for the task of automatic clinical note creation from clinician-patient visit dialogue.  The technology developed from this work can be used to de-burden physicians from documentation burden, allowing them to devote more time and attention to patient care. 
 
 
 ##  Introduction 
@@ -69,8 +69,10 @@ https://arxiv.org/abs/2306.02022
                 Asma {Ben Abacha} and
                 Neal Snider and Thomas Lin and Meliha Yetisgen},
   title = {ACI-BENCH: a Novel Ambient Clinical Intelligence Dataset for Benchmarking Automatic Visit Note Generation},
-  journal = {Submitted to Nature Scientific Data},
-  year = {2023}
+  journal = {Nature Scientific Data},
+  year = {2023}, 
+  volume = {10},
+  url = {https://www.nature.com/articles/s41597-023-02487-3}
 }
 ```
 
